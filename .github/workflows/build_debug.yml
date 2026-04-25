@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: Build Debug APK
-    if: github.repository_owner == 'Mahmud0808'
+    if: github.repository_owner == 'soranerai'
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +26,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Write sign info
-        if: github.repository == 'Mahmud0808/PixelLauncherEnhanced'
+        if: github.repository == 'soranerai/PixelLauncherEnhanced'
         run: |
           if [ ! -z "${{ secrets.KEYSTORE }}" ]; then
             echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties
@@ -72,7 +72,7 @@ jobs:
             COMMIT_MESSAGE_HEADER="Synced with the latest changes"
           fi
 
-          if [[ "$COMMIT_MESSAGE_HEADER" =~ Mahmud0808/localization$ ]]; then
+          if [[ "$COMMIT_MESSAGE_HEADER" =~ soranerai/localization$ ]]; then
             COMMIT_MESSAGE_HEADER="Updated translation strings"
           fi
 
@@ -109,7 +109,7 @@ jobs:
           rm -rf "$RELEASE_DIR/temp"
 
       - name: Telegram File Attachment
-        if: github.repository == 'Mahmud0808/PixelLauncherEnhanced' && env.SKIP_BUILD != 'true'
+        if: github.repository == 'soranerai/PixelLauncherEnhanced' && env.SKIP_BUILD != 'true'
         run: |
           set -e
           curl -v "https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMediaGroup" \

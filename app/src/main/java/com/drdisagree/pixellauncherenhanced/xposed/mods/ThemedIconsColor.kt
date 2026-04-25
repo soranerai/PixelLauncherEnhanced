@@ -61,7 +61,7 @@ class ThemedIconsColor(context: Context) : ModPack(context) {
         replaceResources(packageName)
 
         val sdCardAvailableReceiverClass =
-            findClass("com.android.launcher3.model.SdCardAvailableReceiver")
+            findClass("com.motorola.launcher3.model.SdCardAvailableReceiver")
 
         sdCardAvailableReceiverClass
             .hookMethod("onReceive")

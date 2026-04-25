@@ -20,7 +20,7 @@ class WallpaperDim(context: Context) : ModPack(context) {
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
         val wallpaperColorChangedListener = findClass(
-            $$"com.android.launcher3.util.WallpaperColorHints$onColorsChangedListener$1",
+            $$"com.motorola.launcher3.util.WallpaperColorHints$onColorsChangedListener$1",
             suppressError = true
         )
 

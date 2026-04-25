@@ -36,7 +36,7 @@ class IconLabels(context: Context) : ModPack(context) {
     }
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        val bubbleTextViewClass = findClass("com.android.launcher3.BubbleTextView")
+        val bubbleTextViewClass = findClass("com.motorola.launcher3.BubbleTextView")
 
         fun XC_MethodHook.MethodHookParam.beforeHookedLabel() {
             val mDisplay = thisObject.getField("mDisplay") as Int
@@ -78,14 +78,14 @@ class IconLabels(context: Context) : ModPack(context) {
         try {
             bubbleTextViewClass
                 .hookMethod("applyLabel")
-                .parameters("com.android.launcher3.model.data.ItemInfoWithIcon")
+                .parameters("com.motorola.launcher3.model.data.ItemInfoWithIcon")
                 .throwError()
                 .runBefore { param -> param.beforeHookedLabel() }
                 .runAfter { param -> param.afterHookedLabel() }
         } catch (_: Throwable) {
             bubbleTextViewClass
                 .hookMethod("applyIconAndLabel")
-                .parameters("com.android.launcher3.model.data.ItemInfoWithIcon")
+                .parameters("com.motorola.launcher3.model.data.ItemInfoWithIcon")
                 .runBefore { param -> param.beforeHookedLabel() }
                 .runAfter { param -> param.afterHookedLabel() }
         }

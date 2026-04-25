@@ -60,29 +60,29 @@ class HideApps(context: Context) : ModPack(context) {
     }
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        val invariantDeviceProfileClass = findClass("com.android.launcher3.InvariantDeviceProfile")
+        val invariantDeviceProfileClass = findClass("com.motorola.launcher3.InvariantDeviceProfile")
         val activityAllAppsContainerViewClass =
-            findClass("com.android.launcher3.allapps.ActivityAllAppsContainerView")
+            findClass("com.motorola.launcher3.allapps.ActivityAllAppsContainerView")
         val hotseatPredictionControllerClass =
-            findClass("com.android.launcher3.hybridhotseat.HotseatPredictionController")
+            findClass("com.motorola.launcher3.hybridhotseat.HotseatPredictionController")
         val hybridHotseatOrganizerClass = findClass(
-            "com.android.launcher3.util.HybridHotseatOrganizer",
+            "com.motorola.launcher3.util.HybridHotseatOrganizer",
             suppressError = true
         )
         val predictionRowViewClass =
-            findClass("com.android.launcher3.appprediction.PredictionRowView")
+            findClass("com.motorola.launcher3.appprediction.PredictionRowView")
         val defaultAppSearchAlgorithmClass = findClass(
-            "com.android.launcher3.allapps.DefaultAppSearchAlgorithm",
-            "com.android.launcher3.allapps.search.DefaultAppSearchAlgorithm"
+            "com.motorola.launcher3.allapps.DefaultAppSearchAlgorithm",
+            "com.motorola.launcher3.allapps.search.DefaultAppSearchAlgorithm"
         )
         val quickstepLauncherClass =
-            findClass("com.android.launcher3.uioverrides.QuickstepLauncher")
+            findClass("com.motorola.launcher3.uioverrides.QuickstepLauncher")
         val alphabeticalAppsListClass =
-            findClass("com.android.launcher3.allapps.AlphabeticalAppsList")
-        val allAppsStoreClass = findClass("com.android.launcher3.allapps.AllAppsStore")
-        val appInfoClass = findClass("com.android.launcher3.model.data.AppInfo")
-        val allAppsListClass = findClass("com.android.launcher3.model.AllAppsList")
-        val launcherModelClass = findClass("com.android.launcher3.LauncherModel")
+            findClass("com.motorola.launcher3.allapps.AlphabeticalAppsList")
+        val allAppsStoreClass = findClass("com.motorola.launcher3.allapps.AllAppsStore")
+        val appInfoClass = findClass("com.motorola.launcher3.model.data.AppInfo")
+        val allAppsListClass = findClass("com.motorola.launcher3.model.AllAppsList")
+        val launcherModelClass = findClass("com.motorola.launcher3.LauncherModel")
 
         invariantDeviceProfileClass
             .hookConstructor()
@@ -245,7 +245,7 @@ class HideApps(context: Context) : ModPack(context) {
                     }
             } else {
                 val baseModelUpdateTaskClass = findClass(
-                    "com.android.launcher3.model.BaseModelUpdateTask",
+                    "com.motorola.launcher3.model.BaseModelUpdateTask",
                     suppressError = Build.VERSION.SDK_INT >= 36
                 )
 

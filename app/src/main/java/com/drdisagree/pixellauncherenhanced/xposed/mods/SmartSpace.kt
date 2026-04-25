@@ -60,10 +60,10 @@ class SmartSpace(context: Context) : ModPack(context) {
                 }
             }
 
-        val launcherAppStateClass = findClass("com.android.launcher3.LauncherAppState")
-        val launcherPrefsClass = findClass("com.android.launcher3.LauncherPrefs")
+        val launcherAppStateClass = findClass("com.motorola.launcher3.LauncherAppState")
+        val launcherPrefsClass = findClass("com.motorola.launcher3.LauncherPrefs")
         val launcherPrefsCompanionClass = findClass(
-            $$"com.android.launcher3.LauncherPrefs$Companion",
+            $$"com.motorola.launcher3.LauncherPrefs$Companion",
             suppressError = true
         )
         var quickspaceListenerRegistered = false
@@ -111,7 +111,7 @@ class SmartSpace(context: Context) : ModPack(context) {
             }
 
         val modelCallbacksClass = findClass(
-            "com.android.launcher3.ModelCallbacks",
+            "com.motorola.launcher3.ModelCallbacks",
             suppressError = true
         )
 
@@ -141,7 +141,7 @@ class SmartSpace(context: Context) : ModPack(context) {
                 param.result = false
             }
 
-        val workspaceClass = findClass("com.android.launcher3.Workspace")
+        val workspaceClass = findClass("com.motorola.launcher3.Workspace")
 
         workspaceClass
             .hookMethod("insertNewWorkspaceScreen")
@@ -173,7 +173,7 @@ class SmartSpace(context: Context) : ModPack(context) {
                 param.result = null
             }
 
-        val utilitiesClass = findClass("com.android.launcher3.Utilities")
+        val utilitiesClass = findClass("com.motorola.launcher3.Utilities")
 
         utilitiesClass
             .hookMethod("showQuickspace")
@@ -185,11 +185,11 @@ class SmartSpace(context: Context) : ModPack(context) {
             }
 
         val gridSizeMigrationDBControllerClass = findClass(
-            "com.android.launcher3.model.GridSizeMigrationDBController",
-            "com.android.launcher3.model.GridSizeMigrationUtil",
-            "com.android.launcher3.model.ModelUtils",
+            "com.motorola.launcher3.model.GridSizeMigrationDBController",
+            "com.motorola.launcher3.model.GridSizeMigrationUtil",
+            "com.motorola.launcher3.model.ModelUtils",
         )
-        val gridOccupancyClass = findClass("com.android.launcher3.util.GridOccupancy")!!
+        val gridOccupancyClass = findClass("com.motorola.launcher3.util.GridOccupancy")!!
 
         gridSizeMigrationDBControllerClass
             .hookMethod("solveGridPlacement")
@@ -361,14 +361,14 @@ class SmartSpace(context: Context) : ModPack(context) {
             }
 
         val gridSizeMigrationLogicClass = findClass(
-            "com.android.launcher3.model.GridSizeMigrationLogic",
+            "com.motorola.launcher3.model.GridSizeMigrationLogic",
             suppressError = true
         )
         val workspaceItemsToPlaceClass = findClass(
-            $$"com.android.launcher3.model.GridSizeMigrationLogic$WorkspaceItemsToPlace",
+            $$"com.motorola.launcher3.model.GridSizeMigrationLogic$WorkspaceItemsToPlace",
             suppressError = true
         )
-        val cellAndSpanClass = findClass("com.android.launcher3.util.CellAndSpan")
+        val cellAndSpanClass = findClass("com.motorola.launcher3.util.CellAndSpan")
 
         gridSizeMigrationLogicClass
             .hookMethod("solveGridPlacement")
@@ -530,7 +530,7 @@ class SmartSpace(context: Context) : ModPack(context) {
                 param.result = workspaceItemsToPlace
             }
 
-        val loaderCursorClass = findClass("com.android.launcher3.model.LoaderCursor")
+        val loaderCursorClass = findClass("com.motorola.launcher3.model.LoaderCursor")
 
         loaderCursorClass
             .hookMethod("checkAndAddItem")
@@ -541,7 +541,7 @@ class SmartSpace(context: Context) : ModPack(context) {
                 dataModel.setFieldSilently("isFirstPagePinnedItemEnabled", false)
             }
 
-        val loaderTask = findClass("com.android.launcher3.model.LoaderTask")
+        val loaderTask = findClass("com.motorola.launcher3.model.LoaderTask")
 
         loaderTask
             .hookMethod("loadWorkspace", "loadWorkspaceImpl")

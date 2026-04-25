@@ -58,7 +58,7 @@ class ThemedIcons(context: Context) : ModPack(context) {
             // Only for modified Launcher3
             if (mContext.packageName != LAUNCHER3_PACKAGE) throw Throwable()
 
-            val launcherIconsClass = findClass("com.android.launcher3.icons.LauncherIcons")
+            val launcherIconsClass = findClass("com.motorola.launcher3.icons.LauncherIcons")
 
             launcherIconsClass
                 .hookMethod("getMonochromeDrawable")
@@ -72,7 +72,7 @@ class ThemedIcons(context: Context) : ModPack(context) {
                     }
                 }
         } catch (_: Throwable) {
-            val baseIconFactoryClass = findClass("com.android.launcher3.icons.BaseIconFactory")
+            val baseIconFactoryClass = findClass("com.motorola.launcher3.icons.BaseIconFactory")
 
             baseIconFactoryClass
                 .hookConstructor()
@@ -87,7 +87,7 @@ class ThemedIcons(context: Context) : ModPack(context) {
                         .hookMethod("getMonochrome")
                         .runAfter runAfter2@{ param2 ->
                             if (param2.result == null && forceThemedIcons) {
-                                // If it's from com.android.launcher3.icons.IconProvider class and
+                                // If it's from com.motorola.launcher3.icons.IconProvider class and
                                 // mentioned methods, monochrome is already included
                                 Thread.currentThread().stackTrace.firstOrNull {
                                     it.className.contains("IconProvider") && it.methodName in listOf(
@@ -117,18 +117,18 @@ class ThemedIcons(context: Context) : ModPack(context) {
                 }
         }
 
-        val bubbleTextViewClass = findClass("com.android.launcher3.BubbleTextView")
-        val themesClass = findClass("com.android.launcher3.util.Themes")
+        val bubbleTextViewClass = findClass("com.motorola.launcher3.BubbleTextView")
+        val themesClass = findClass("com.motorola.launcher3.util.Themes")
         val themeManagerClass = findClass(
-            "com.android.launcher3.graphics.ThemeManager",
+            "com.motorola.launcher3.graphics.ThemeManager",
             suppressError = true
         )
         val themePreferenceClass = findClass(
-            "com.android.launcher3.graphics.theme.ThemePreference",
+            "com.motorola.launcher3.graphics.theme.ThemePreference",
             suppressError = true
         )
         val intArrayClass = findClass(
-            "com.android.launcher3.util.IntArray",
+            "com.motorola.launcher3.util.IntArray",
             suppressError = true
         )
 
@@ -150,7 +150,7 @@ class ThemedIcons(context: Context) : ModPack(context) {
 
         bubbleTextViewClass
             .hookMethod("applyIconAndLabel")
-            .parameters("com.android.launcher3.model.data.ItemInfoWithIcon")
+            .parameters("com.motorola.launcher3.model.data.ItemInfoWithIcon")
             .runBefore { param ->
                 if (!appDrawerThemedIcons) return@runBefore
 

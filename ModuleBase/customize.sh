@@ -1,6 +1,6 @@
 PKGNAME="com.drdisagree.pixellauncherenhanced"
 NEXUSLAUNCHER="com.google.android.apps.nexuslauncher"
-LAUNCHER3="com.android.launcher3"
+LAUNCHER3="com.motorola.launcher3"
 LSPDDBPATH="/data/adb/lspd/config/modules_config.db"
 MAGISKDBPATH="/data/adb/magisk.db"
 

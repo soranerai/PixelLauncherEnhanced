@@ -11,7 +11,7 @@ object Constants {
     // System packages
     const val FRAMEWORK_PACKAGE = "android"
     const val PIXEL_LAUNCHER_PACKAGE = "com.google.android.apps.nexuslauncher"
-    const val LAUNCHER3_PACKAGE = "com.android.launcher3"
+    const val LAUNCHER3_PACKAGE = "com.motorola.launcher3"
 
     // Preferences
     const val VIBRATE_UI = "vibrate_ui"

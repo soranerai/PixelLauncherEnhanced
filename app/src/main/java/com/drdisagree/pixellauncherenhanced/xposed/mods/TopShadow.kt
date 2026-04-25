@@ -40,7 +40,7 @@ class TopShadow(context: Context) : ModPack(context) {
     }
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        val sysUiScrimClass = findClass("com.android.launcher3.graphics.SysUiScrim")
+        val sysUiScrimClass = findClass("com.motorola.launcher3.graphics.SysUiScrim")
 
         sysUiScrimClass
             .hookConstructor()

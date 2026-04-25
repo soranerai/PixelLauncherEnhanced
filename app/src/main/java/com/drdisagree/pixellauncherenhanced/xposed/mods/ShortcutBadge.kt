@@ -27,8 +27,8 @@ class ShortcutBadge(context: Context) : ModPack(context) {
     }
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        val bubbleTextViewClass = findClass("com.android.launcher3.BubbleTextView")
-        val bitmapInfoClass = findClass("com.android.launcher3.icons.BitmapInfo")
+        val bubbleTextViewClass = findClass("com.motorola.launcher3.BubbleTextView")
+        val bitmapInfoClass = findClass("com.motorola.launcher3.icons.BitmapInfo")
 
         bubbleTextViewClass
             .hookConstructor()

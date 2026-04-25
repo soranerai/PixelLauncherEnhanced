@@ -28,7 +28,7 @@ class GestureMod(context: Context) : ModPack(context) {
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
         val workspaceTouchListenerClass =
-            findClass("com.android.launcher3.touch.WorkspaceTouchListener")
+            findClass("com.motorola.launcher3.touch.WorkspaceTouchListener")
 
         workspaceTouchListenerClass
             .hookMethod("onTouch")

@@ -29,17 +29,17 @@ class LockLayout(context: Context) : ModPack(context) {
     }
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        val dragControllerClass = findClass("com.android.launcher3.dragndrop.DragController")
+        val dragControllerClass = findClass("com.motorola.launcher3.dragndrop.DragController")
         val launcherAppWidgetHostViewClass =
-            findClass("com.android.launcher3.widget.LauncherAppWidgetHostView")
-        val systemShortcutClass = findClass("com.android.launcher3.popup.SystemShortcut")
+            findClass("com.motorola.launcher3.widget.LauncherAppWidgetHostView")
+        val systemShortcutClass = findClass("com.motorola.launcher3.popup.SystemShortcut")
         val launcherPopupItemDragHandlerClass = findClass(
-            $$"com.android.launcher3.popup.PopupContainerWithArrow$LauncherPopupItemDragHandler",
-            "com.android.launcher3.popup.LauncherPopupItemDragHandler",
+            $$"com.motorola.launcher3.popup.PopupContainerWithArrow$LauncherPopupItemDragHandler",
+            "com.motorola.launcher3.popup.LauncherPopupItemDragHandler",
         )
-        val optionsPopupViewClass = findClass("com.android.launcher3.views.OptionsPopupView")
+        val optionsPopupViewClass = findClass("com.motorola.launcher3.views.OptionsPopupView")
         val taskbarDragControllerClass = findClass(
-            "com.android.launcher3.taskbar.TaskbarDragController",
+            "com.motorola.launcher3.taskbar.TaskbarDragController",
             suppressError = true
         )
 
@@ -133,7 +133,7 @@ class LockLayout(context: Context) : ModPack(context) {
                 }
         } else if (optionsPopupViewClass.hasMethod("getOptions")) {
             val optionItemClass =
-                findClass($$"com.android.launcher3.views.OptionsPopupView$OptionItem")
+                findClass($$"com.motorola.launcher3.views.OptionsPopupView$OptionItem")
 
             @SuppressLint("DiscouragedApi")
             val widgetButtonTextId = mContext.resources.getIdentifier(

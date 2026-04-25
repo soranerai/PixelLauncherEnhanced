@@ -34,14 +34,14 @@ class DarkStatusbar (context: Context) : ModPack(context) {
                 .callMethod("updateUiState", UI_STATE_BASE_WINDOW, FLAG_LIGHT_STATUS)
         }
 
-        val launcherClass = findClass("com.android.launcher3.Launcher")
+        val launcherClass = findClass("com.motorola.launcher3.Launcher")
 
         launcherClass
             .hookMethod("onCreate")
             .runAfter(::forceDark)
 
         val quickstepLauncherClass =
-            findClass("com.android.launcher3.uioverrides.QuickstepLauncher")
+            findClass("com.motorola.launcher3.uioverrides.QuickstepLauncher")
 
         quickstepLauncherClass
             .hookMethod("onCreate")

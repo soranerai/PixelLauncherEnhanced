@@ -54,8 +54,8 @@ class QuickLaunch(context: Context) : ModPack(context) {
 		// Core: hook container inflation & keep lightweight references to list / recycler / search box
 		listOf(
 			"com.google.android.apps.nexuslauncher.allapps.SearchContainerView", // Pixel specific
-			"com.android.launcher3.allapps.SearchContainerView",
-			"com.android.launcher3.allapps.ActivityAllAppsContainerView" // fallback
+			"com.motorola.launcher3.allapps.SearchContainerView",
+			"com.motorola.launcher3.allapps.ActivityAllAppsContainerView" // fallback
 		).forEach { className ->
 			findClass(className, suppressError = true)
 				.hookMethod("onFinishInflate")
@@ -75,7 +75,7 @@ class QuickLaunch(context: Context) : ModPack(context) {
 
 		// Keep references when initContent is invoked (alternative construction path)
 		findClass(
-			"com.android.launcher3.allapps.ActivityAllAppsContainerView",
+			"com.motorola.launcher3.allapps.ActivityAllAppsContainerView",
 			suppressError = true
 		)
 			.hookMethod("initContent")
@@ -90,7 +90,7 @@ class QuickLaunch(context: Context) : ModPack(context) {
 
 		// Track recycler attachment (defensive; some builds swap instances)
 		listOf(
-			"com.android.launcher3.allapps.SearchRecyclerView",
+			"com.motorola.launcher3.allapps.SearchRecyclerView",
 			"com.google.android.apps.nexuslauncher.allapps.SearchRecyclerView",
 			"com.google.android.apps.nexuslauncher.allapps.GSearchRecyclerView"
 		).forEach { className ->
@@ -106,7 +106,7 @@ class QuickLaunch(context: Context) : ModPack(context) {
 		// Keep alphaListRef fresh when search results mutate
         try {
             findClass(
-                "com.android.launcher3.allapps.AlphabeticalAppsList",
+                "com.motorola.launcher3.allapps.AlphabeticalAppsList",
                 suppressError = true
             )
                 .hookMethod("setSearchResults")
@@ -116,7 +116,7 @@ class QuickLaunch(context: Context) : ModPack(context) {
                         WeakReference(param.thisObject)
                 }
         } catch (_: Throwable) {
-            findClass("com.android.launcher3.allapps.ActivityAllAppsContainerView")
+            findClass("com.motorola.launcher3.allapps.ActivityAllAppsContainerView")
                 .hookMethod("getSearchResultList")
                 .runAfter { param ->
                     val alphabeticalAppsList = param.result

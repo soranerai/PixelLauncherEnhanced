@@ -35,23 +35,23 @@ class OpacityModifier(context: Context) : ModPack(context) {
     }
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        val allAppsStateClass = findClass("com.android.launcher3.uioverrides.states.AllAppsState")
-        val overviewStateClass = findClass("com.android.launcher3.uioverrides.states.OverviewState")
+        val allAppsStateClass = findClass("com.motorola.launcher3.uioverrides.states.AllAppsState")
+        val overviewStateClass = findClass("com.motorola.launcher3.uioverrides.states.OverviewState")
         val quickSwitchStateClass =
-            findClass("com.android.launcher3.uioverrides.states.QuickSwitchState")
+            findClass("com.motorola.launcher3.uioverrides.states.QuickSwitchState")
         val recentsStateClass = findClass("com.android.quickstep.fallback.RecentsState")
         val hintStateClass = findClass(
-            "com.android.launcher3.states.HintState",
-            "com.android.launcher3.uioverrides.states.HintState"
+            "com.motorola.launcher3.states.HintState",
+            "com.motorola.launcher3.uioverrides.states.HintState"
         )
         val activityAllAppsContainerViewClass =
-            findClass("com.android.launcher3.allapps.ActivityAllAppsContainerView")
+            findClass("com.motorola.launcher3.allapps.ActivityAllAppsContainerView")
         val taskbarAllAppsSlideInViewClass = findClass(
-            "com.android.launcher3.taskbar.allapps.TaskbarAllAppsSlideInView",
+            "com.motorola.launcher3.taskbar.allapps.TaskbarAllAppsSlideInView",
             suppressError = true
         )
         val scrimColorsClass = findClass(
-            "com.android.launcher3.views.ScrimColors",
+            "com.motorola.launcher3.views.ScrimColors",
             suppressError = true
         )
 

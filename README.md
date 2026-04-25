@@ -120,7 +120,7 @@ This module is only compatible with devices using the following launcher package
 
 - Pixel Launcher `(com.google.android.apps.nexuslauncher)`
 
-- Launcher3 Launcher `(com.android.launcher3)`
+- Launcher3 Launcher `(com.motorola.launcher3)`
 
 Root access is a requirement for the following features:
 

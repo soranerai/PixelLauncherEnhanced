@@ -27,7 +27,7 @@ class DrawerSearchbar(context: Context) : ModPack(context) {
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
         val activityAllAppsContainerViewClass =
-            findClass("com.android.launcher3.allapps.ActivityAllAppsContainerView")
+            findClass("com.motorola.launcher3.allapps.ActivityAllAppsContainerView")
 
         activityAllAppsContainerViewClass
             .hookMethod("onFinishInflate")

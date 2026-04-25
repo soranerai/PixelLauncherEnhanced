@@ -40,7 +40,7 @@ class TaskbarHandle(context: Context) : ModPack(context) {
     }
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        val stashedHandleViewClass = findClass("com.android.launcher3.taskbar.StashedHandleView")
+        val stashedHandleViewClass = findClass("com.motorola.launcher3.taskbar.StashedHandleView")
 
         stashedHandleViewClass
             .hookConstructor()
@@ -56,7 +56,7 @@ class TaskbarHandle(context: Context) : ModPack(context) {
             }
 
         val taskbarActivityContextClass =
-            findClass("com.android.launcher3.taskbar.TaskbarActivityContext")
+            findClass("com.motorola.launcher3.taskbar.TaskbarActivityContext")
 
         @Suppress("UNCHECKED_CAST")
         taskbarActivityContextClass

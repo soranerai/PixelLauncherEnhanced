@@ -35,11 +35,11 @@ class HideStatusbar(context: Context) : ModPack(context) {
     }
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        val launcherStateClass = findClass("com.android.launcher3.LauncherState")!!
+        val launcherStateClass = findClass("com.motorola.launcher3.LauncherState")!!
         OVERVIEW = launcherStateClass.getStaticField("OVERVIEW")
 
         val quickstepLauncherClass =
-            findClass("com.android.launcher3.uioverrides.QuickstepLauncher")
+            findClass("com.motorola.launcher3.uioverrides.QuickstepLauncher")
 
         quickstepLauncherClass
             .hookMethod("onCreate")
@@ -101,7 +101,7 @@ class HideStatusbar(context: Context) : ModPack(context) {
 
     private fun getListener(listener: CustomStateListener): Any {
         val listenerClass =
-            findClass("com.android.launcher3.statemanager.StateManager\$StateListener")!!
+            findClass("com.motorola.launcher3.statemanager.StateManager\$StateListener")!!
 
         return Proxy.newProxyInstance(
             listenerClass.classLoader,

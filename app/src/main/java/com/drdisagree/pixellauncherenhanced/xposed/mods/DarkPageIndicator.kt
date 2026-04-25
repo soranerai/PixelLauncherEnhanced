@@ -27,7 +27,7 @@ class DarkPageIndicator (context: Context) : ModPack(context) {
     }
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        val launcherClass = findClass("com.android.launcher3.Launcher")
+        val launcherClass = findClass("com.motorola.launcher3.Launcher")
 
         try {
             launcherClass

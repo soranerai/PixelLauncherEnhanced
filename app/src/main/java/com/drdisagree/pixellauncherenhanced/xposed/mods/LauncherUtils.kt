@@ -28,14 +28,14 @@ class LauncherUtils(context: Context) : ModPack(context) {
     override fun updatePrefs(vararg key: String) {}
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        ThemesClass = findClass("com.android.launcher3.util.Themes")
-        GraphicsUtilsClass = findClass("com.android.launcher3.icons.GraphicsUtils")
-        InvariantDeviceProfileClass = findClass("com.android.launcher3.InvariantDeviceProfile")
-        BaseIconCacheClass = findClass("com.android.launcher3.icons.cache.BaseIconCache")
-        QuickstepLauncherClass = findClass("com.android.launcher3.uioverrides.QuickstepLauncher")
-        LauncherAppStateClass = findClass("com.android.launcher3.LauncherAppState")
+        ThemesClass = findClass("com.motorola.launcher3.util.Themes")
+        GraphicsUtilsClass = findClass("com.motorola.launcher3.icons.GraphicsUtils")
+        InvariantDeviceProfileClass = findClass("com.motorola.launcher3.InvariantDeviceProfile")
+        BaseIconCacheClass = findClass("com.motorola.launcher3.icons.cache.BaseIconCache")
+        QuickstepLauncherClass = findClass("com.motorola.launcher3.uioverrides.QuickstepLauncher")
+        LauncherAppStateClass = findClass("com.motorola.launcher3.LauncherAppState")
         LauncherAppStateCompanionClass = findClass(
-            $$"com.android.launcher3.LauncherAppState$Companion",
+            $$"com.motorola.launcher3.LauncherAppState$Companion",
             suppressError = true
         )
 

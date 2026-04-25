@@ -20,9 +20,9 @@ class IconUpdater(context: Context) : ModPack(context) {
     override fun updatePrefs(vararg key: String) {}
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        val launcherModelClass = findClass("com.android.launcher3.LauncherModel")
-        val baseActivityClass = findClass("com.android.launcher3.BaseActivity")
-        val packageUserKeyClass = findClass("com.android.launcher3.util.PackageUserKey")
+        val launcherModelClass = findClass("com.motorola.launcher3.LauncherModel")
+        val baseActivityClass = findClass("com.motorola.launcher3.BaseActivity")
+        val packageUserKeyClass = findClass("com.motorola.launcher3.util.PackageUserKey")
         val userManager = mContext.getSystemService(UserManager::class.java) as UserManager
 
         fun hookOnAppIconChanged(paramThisObject: Any?, launcherModel: Any?, type: HookType) {
@@ -109,7 +109,7 @@ class IconUpdater(context: Context) : ModPack(context) {
                     )
                 } else {
                     val modelInitializerClass =
-                        findClass("com.android.launcher3.model.ModelInitializer")
+                        findClass("com.motorola.launcher3.model.ModelInitializer")
 
                     modelInitializerClass
                         .hookConstructor()

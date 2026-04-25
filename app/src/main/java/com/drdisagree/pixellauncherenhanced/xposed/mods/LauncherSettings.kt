@@ -66,10 +66,10 @@ class LauncherSettings(context: Context) : ModPack(context) {
     @SuppressLint("DiscouragedApi", "UseCompatLoadingForDrawables")
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
         val launcherSettingsFragmentClass = findClass(
-            $$"com.android.launcher3.SettingsActivity$LauncherSettingsFragment",
-            $$"com.android.launcher3.settings.SettingsActivity$LauncherSettingsFragment"
+            $$"com.motorola.launcher3.SettingsActivity$LauncherSettingsFragment",
+            $$"com.motorola.launcher3.settings.SettingsActivity$LauncherSettingsFragment"
         )
-        val featureFlagsClass = findClass("com.android.launcher3.config.FeatureFlags")
+        val featureFlagsClass = findClass("com.motorola.launcher3.config.FeatureFlags")
 
         if (mContext.packageName == PIXEL_LAUNCHER_PACKAGE) {
             launcherSettingsFragmentClass
@@ -225,12 +225,12 @@ class LauncherSettings(context: Context) : ModPack(context) {
                     }
             }
 
-        val optionsPopupViewClass = findClass("com.android.launcher3.views.OptionsPopupView")
+        val optionsPopupViewClass = findClass("com.motorola.launcher3.views.OptionsPopupView")
         val optionItemClass =
-            findClass($$"com.android.launcher3.views.OptionsPopupView$OptionItem")!!
+            findClass($$"com.motorola.launcher3.views.OptionsPopupView$OptionItem")!!
         val launcherEventEnum =
-            findClass($$"com.android.launcher3.logging.StatsLogManager$LauncherEvent")!!
-        val eventEnum = findClass($$"com.android.launcher3.logging.StatsLogManager$EventEnum")!!
+            findClass($$"com.motorola.launcher3.logging.StatsLogManager$LauncherEvent")!!
+        val eventEnum = findClass($$"com.motorola.launcher3.logging.StatsLogManager$EventEnum")!!
         val optionItemConstructors = optionItemClass.declaredConstructors
 
         optionItemClass

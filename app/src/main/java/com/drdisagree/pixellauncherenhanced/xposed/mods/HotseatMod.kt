@@ -47,8 +47,8 @@ class HotseatMod(context: Context) : ModPack(context) {
     }
 
     override fun handleLoadPackage(loadPackageParam: LoadPackageParam) {
-        val hotseatClass = findClass("com.android.launcher3.Hotseat")
-        val workspaceClass = findClass("com.android.launcher3.Workspace")
+        val hotseatClass = findClass("com.motorola.launcher3.Hotseat")
+        val workspaceClass = findClass("com.motorola.launcher3.Workspace")
 
         hotseatClass
             .hookConstructor()

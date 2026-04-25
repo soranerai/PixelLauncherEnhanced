@@ -44,9 +44,9 @@ class GridOptions (context: Context) : ModPack(context) {
     }
 
     override fun handleLoadPackage(loadPackageParam: XC_LoadPackage.LoadPackageParam) {
-        val deviceProfileClass = findClass("com.android.launcher3.DeviceProfile")
-        val deviceProfileBuilderClass = findClass($$"com.android.launcher3.DeviceProfile$Builder")
-        val invariantDeviceProfileClass = findClass("com.android.launcher3.InvariantDeviceProfile")
+        val deviceProfileClass = findClass("com.motorola.launcher3.DeviceProfile")
+        val deviceProfileBuilderClass = findClass($$"com.motorola.launcher3.DeviceProfile$Builder")
+        val invariantDeviceProfileClass = findClass("com.motorola.launcher3.InvariantDeviceProfile")
 
         fun Any.hookDeviceProfile() {
             val temp = getFieldSilently("iconSizePx") as? Int
@@ -136,7 +136,7 @@ class GridOptions (context: Context) : ModPack(context) {
             }
 
         val allAppsProfileClass = findClass(
-            "com.android.launcher3.deviceprofile.AllAppsProfile",
+            "com.motorola.launcher3.deviceprofile.AllAppsProfile",
             suppressError = Build.VERSION.SDK_INT <= Build.VERSION_CODES.VANILLA_ICE_CREAM
         )
 
